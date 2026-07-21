@@ -1,3 +1,4 @@
+import pytest
 from cal import square
 
 def main():
@@ -16,6 +17,10 @@ def test_positive():
 def test_negative():
     assert square(-4) == 16
     assert square(-7) == 49
-    
+
+def test_str():
+    with pytest.raises(TypeError):
+        square("string")
+
 if __name__ == "__main__":
     main()
