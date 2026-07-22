@@ -1,5 +1,6 @@
 names = (input("What's ur name ?"))
 
-f = open("store.txt", "a")
-f.write(f"{names}\n")
-f.close()
+with open("store.txt", "a") as f:
+    f.write(f"{names}\n")
+
+#f.close()
