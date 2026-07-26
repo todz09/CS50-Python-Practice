@@ -12,13 +12,13 @@ class Student():
     
     @property # Getter -> function or a clas which gets a certain attribute or variable 
     def house(self):
-        return self.house 
+        return self._house 
     
     @house.setter # Setter -> function that sets some value
     def house(self, house):
         if house not in ["Griffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid House")
-        self.house = house
+        self._house = house
     
 def main():
     student = get_student()
