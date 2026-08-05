@@ -1,18 +1,26 @@
-balance = 0
+class Account:
+    def __init__(self):
+        self._balance = 0
+
+    @property
+    def balance(self):
+        return self._balance
+    
+    def deposit(self, amount):
+        self._balance += amount
+
+    def withdraw(self, amount):
+        self._balance -= amount
 
 def main():
-    print("Balance: $", balance)
-    deposit(100)
-    withdraw(50)
-    print("Balance: $", balance)
+    account = Account()
+    print("Initial balance:", account.balance())
     
-def withdraw(amount):
-    global balance
-    balance -= amount
+    account.deposit(100)
+    print("Balance after deposit of 100:", account.balance())
     
-def deposit(amount):
-    global balance
-    balance += amount
-
+    account.withdraw(50)
+    print("Balance after withdrawal of 50:", account.balance())
+    
 if __name__ == "__main__":
     main()
